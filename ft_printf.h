@@ -6,7 +6,7 @@
 /*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 17:28:10 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/21 16:15:51 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/21 18:24:05 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 int	ft_printf(const char *s, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
-
-
+int	ft_putnbr(int n);
 
 #endif
