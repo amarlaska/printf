@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarlasc <amarlasc@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 19:04:48 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/20 19:44:34 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/21 16:15:15 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,4 @@ int ft_putnbr(int n)
     c = (n % 10) + '0';
     count += write(1, &c, 1);
     return(count);
-}
-
-int main(void)
-{
-    int len;
-
-    len = ft_putnbr(53);
-	printf("\n%d\n", len);
-    len = ft_putnbr(-233);
-	printf("\n%d\n", len);
-    return (0);
 }

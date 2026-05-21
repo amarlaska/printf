@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarlasc <amarlasc@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:09:38 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/20 18:30:48 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/21 17:37:08 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    write(1, &c, 1);
-    return(1);
+	write(1, &c, 1);
+	return (1);
 }
+
