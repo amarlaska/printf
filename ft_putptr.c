@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarlasc <amarlasc@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/20 18:15:06 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/25 22:38:07 by amarlasc         ###   ########.fr       */
+/*   Created: 2026/05/25 18:23:55 by amarlasc          #+#    #+#             */
+/*   Updated: 2026/05/25 22:25:33 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-int	ft_putstr(char *s)
+int ft_putptr(void *ptr)
 {
-	int	i;
+    int             count;
+    unsigned long   address;
 
-	i = 0;
-	if (!s)
-		return (write(1, "(null)", 6));
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
+    if (!ptr)
+        return (ft_putstr("(nil)"));
+    address = (unsigned long)ptr;
+    count = ft_putstr("0x");
+    count += ft_putnbr_base(address, "0123456789abcdef");
+    return (count);
 }
