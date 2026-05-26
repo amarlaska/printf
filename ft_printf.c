@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarlasc <amarlasc@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 15:41:36 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/25 22:34:49 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/26 16:19:06 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,38 +46,17 @@ int	ft_printf(const char *s, ...)
 	va_start(varg, s);
 	while (s[i])
 	{
-		if (s[i] != '%')
+		if (s[i] == '%' && s[i + 1])
+		{
+			count += ft_format(s[i + 1], varg);
+			i += 2;
+		}
+		else
 		{
 			count += ft_putchar(s[i]);
 			i++;
-		}
-		else 
-		{
-			if (s[i + 1] == 'c' || s[i + 1] == 's'|| s[i + 1] == 'd' ||
-				s[i + 1] == 'i' || s[i + 1] == '%' || s[i + 1] == 'p'||
-				s[i + 1] == 'x' || s[i + 1] == 'X' || s[i + 1] == 'u')
-			{
-				count += ft_format(s[i + 1], varg);
-				i += 2;
-			}
-			else if (s[i] == '%' && s[i + 1] != '\0')
-			{
-				count += ft_putchar(s[i]);
-				i++;
-			}
 		}
 	}
 	va_end(varg);
 	return (count);
 }
-
-/*
-int	main(void)
-{
-	int	len;
-
-	len = ft_printf("Hola Alba %%\n", NULL);
-	ft_printf("\n%d\n", len);
-	return (0);
-}
-*/

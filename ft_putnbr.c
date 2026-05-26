@@ -6,28 +6,28 @@
 /*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 19:04:48 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/21 16:15:15 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/26 16:17:37 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-    int     count;
-    char    c;
+	int		count;
+	char	c;
 
-    count = 0;
-    if (n == -2147483648)
-        return(write(1, "-2147483648", 11));
-    if (n < 0)
-    {
-        count += write(1, "-", 1);
-        n *= -1;
-    }
-    if (n >= 10)
-        count += ft_putnbr(n / 10);
-    c = (n % 10) + '0';
-    count += write(1, &c, 1);
-    return(count);
+	count = 0;
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 11));
+	if (n < 0)
+	{
+		count += write(1, "-", 1);
+		n *= -1;
+	}
+	if (n >= 10)
+		count += ft_putnbr(n / 10);
+	c = (n % 10) + '0';
+	count += write(1, &c, 1);
+	return (count);
 }

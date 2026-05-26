@@ -6,7 +6,7 @@
 /*   By: amarlasc <amarlasc@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 18:09:38 by amarlasc          #+#    #+#             */
-/*   Updated: 2026/05/21 17:37:08 by amarlasc         ###   ########.fr       */
+/*   Updated: 2026/05/26 16:19:52 by amarlasc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,3 @@ int	ft_putchar(char c)
 	write(1, &c, 1);
 	return (1);
 }
-
